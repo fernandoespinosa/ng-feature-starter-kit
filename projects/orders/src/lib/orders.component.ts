@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'orders-orders',
+  selector: 'orders-root',
   template: `
     <p>
-      orders works!
+      orders works! live!
     </p>
   `,
   styles: []
