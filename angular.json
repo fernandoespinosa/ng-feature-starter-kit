@@ -8,11 +8,6 @@
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {
-        "@schematics/angular:component": {
-          "styleext": "scss"
-        }
-      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -125,7 +120,52 @@
           }
         }
       }
+    },
+    "orders": {
+      "root": "projects/orders",
+      "sourceRoot": "projects/orders/src",
+      "projectType": "library",
+      "prefix": "orders",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/orders/tsconfig.lib.json",
+            "project": "projects/orders/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/orders/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/orders/src/test.ts",
+            "tsConfig": "projects/orders/tsconfig.spec.json",
+            "karmaConfig": "projects/orders/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/orders/tsconfig.lib.json",
+              "projects/orders/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
-  "defaultProject": "orders-app"
+  "defaultProject": "orders",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
