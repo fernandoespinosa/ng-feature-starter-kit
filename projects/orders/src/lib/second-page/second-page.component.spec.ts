@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { SecondPageComponent } from './second-page.component';
 
 describe('SecondPageComponent', () => {
@@ -8,7 +8,8 @@ describe('SecondPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SecondPageComponent ]
+      declarations: [SecondPageComponent],
+      imports: [RouterTestingModule]
     })
     .compileComponents();
   }));
