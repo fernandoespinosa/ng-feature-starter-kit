@@ -57,13 +57,13 @@
             "index": "projects/orders-app/src/index.html",
             "main": "projects/orders-app/src/main.ts",
             "polyfills": "projects/orders-app/src/polyfills.ts",
-            "tsConfig": "projects/orders-app/tsconfig.app.json",
+            "tsConfig": "projects/orders-app/src/tsconfig.app.json",
             "assets": [
               "projects/orders-app/src/favicon.ico",
               "projects/orders-app/src/assets"
             ],
             "styles": [
-              "projects/orders-app/src/styles.css"
+              "projects/orders-app/src/styles.scss"
             ],
             "scripts": []
           },
@@ -109,10 +109,10 @@
           "options": {
             "main": "projects/orders-app/src/test.ts",
             "polyfills": "projects/orders-app/src/polyfills.ts",
-            "tsConfig": "projects/orders-app/tsconfig.spec.json",
-            "karmaConfig": "projects/orders-app/karma.conf.js",
+            "tsConfig": "projects/orders-app/src/tsconfig.spec.json",
+            "karmaConfig": "projects/orders-app/src/karma.conf.js",
             "styles": [
-              "projects/orders-app/src/styles.css"
+              "projects/orders-app/src/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -125,8 +125,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/orders-app/tsconfig.app.json",
-              "projects/orders-app/tsconfig.spec.json"
+              "projects/orders-app/src/tsconfig.app.json",
+              "projects/orders-app/src/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
