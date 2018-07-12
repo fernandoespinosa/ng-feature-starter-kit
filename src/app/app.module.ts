@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OrdersModule } from 'orders';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -11,8 +11,10 @@ import { OrdersModule } from 'orders';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    OrdersModule
+    OrdersModule,
+    RouterModule.forRoot([
+      { path: '', pathMatch: 'full', redirectTo: 'orders' },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
